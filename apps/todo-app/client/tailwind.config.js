@@ -7,6 +7,10 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      fontFamily: {
+        display: ['"Playfair Display"', 'Georgia', 'serif'],
+        body: ['Manrope', 'system-ui', '-apple-system', '"Segoe UI"', 'sans-serif'],
+      },
       colors: {
         brand: {
           50: '#f0f5ff',

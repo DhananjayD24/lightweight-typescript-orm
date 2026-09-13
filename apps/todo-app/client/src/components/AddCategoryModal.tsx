@@ -7,17 +7,6 @@ interface AddCategoryModalProps {
   onSubmit: (name: string, color: string) => void;
 }
 
-const PRESET_COLORS = [
-  '#6366f1', // Indigo
-  '#ec4899', // Pink
-  '#10b981', // Emerald
-  '#f59e0b', // Amber
-  '#8b5cf6', // Purple
-  '#06b6d4', // Cyan
-  '#f43f5e', // Rose
-  '#3b82f6', // Blue
-];
-
 export const AddCategoryModal: React.FC<AddCategoryModalProps> = ({
   isOpen,
   onClose,
@@ -75,26 +64,6 @@ export const AddCategoryModal: React.FC<AddCategoryModalProps> = ({
               autoFocus
             />
             {error && <p className="text-xs text-rose-400 mt-1">{error}</p>}
-          </div>
-
-          <div>
-            <label className="block text-xs font-semibold text-slate-300 mb-2 flex items-center gap-1.5">
-              <Palette className="w-3.5 h-3.5 text-violet-400" />
-              <span>Accent Color</span>
-            </label>
-            <div className="flex items-center gap-2.5 flex-wrap">
-              {PRESET_COLORS.map((c) => (
-                <button
-                  key={c}
-                  type="button"
-                  onClick={() => setColor(c)}
-                  className={`w-7 h-7 rounded-xl transition-all ${
-                    color === c ? 'ring-2 ring-white ring-offset-2 ring-offset-slate-900 scale-110' : 'hover:scale-105'
-                  }`}
-                  style={{ backgroundColor: c }}
-                />
-              ))}
-            </div>
           </div>
 
           <div className="flex items-center justify-end gap-3 pt-4 border-t border-slate-800">

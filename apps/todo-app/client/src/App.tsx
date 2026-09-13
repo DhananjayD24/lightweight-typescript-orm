@@ -155,22 +155,22 @@ export const App: React.FC = () => {
         {loading ? (
           <div className="flex flex-col items-center justify-center py-16 gap-3 text-slate-400">
             <Loader2 className="w-8 h-8 animate-spin text-indigo-500" />
-            <p className="text-xs font-medium">Executing ORM query builder...</p>
+            <p className="text-xs font-medium">Loading tasks...</p>
           </div>
-        ) : todos.length === 0 ? (
+        ) : todos.length === 0 && (statusFilter === 'all' || statusFilter === 'active') ? (
           <div className="flex flex-col items-center justify-center py-16 px-4 text-center border-2 border-dashed border-slate-800/80 rounded-2xl bg-slate-900/40">
             <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-3">
               <Layers className="w-6 h-6" />
             </div>
             <h3 className="text-base font-bold text-slate-200">No tasks match your filters</h3>
             <p className="text-xs text-slate-400 max-w-sm mt-1">
-              Create a task or clear filter options to query records using your TypeScript ORM.
+              Create a task or clear filter options to see your list.
             </p>
             <button
               onClick={() => setIsAddTodoOpen(true)}
               className="mt-4 px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-xs font-semibold text-white transition-all shadow-md shadow-indigo-600/20"
             >
-              Add First Task
+              Add Task
             </button>
           </div>
         ) : (
@@ -186,13 +186,6 @@ export const App: React.FC = () => {
           </div>
         )}
       </main>
-
-      {/* Footer */}
-      <footer className="mt-8 text-center text-xs text-slate-500">
-        <p>
-          Built with <strong className="text-indigo-400">lightweight-ts-orm</strong> npm package monorepo architecture.
-        </p>
-      </footer>
 
       {/* Modals */}
       <AddTodoModal

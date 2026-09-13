@@ -39,6 +39,10 @@ export const App: React.FC = () => {
   const [isAddTodoOpen, setIsAddTodoOpen] = useState(false);
   const [isAddCategoryOpen, setIsAddCategoryOpen] = useState(false);
 
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_API_BASE_URL}/health`).catch(() => {});
+  }, []);
+
   const loadData = async () => {
     try {
       setLoading(true);

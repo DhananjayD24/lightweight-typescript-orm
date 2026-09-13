@@ -86,7 +86,7 @@ Parameters array: `[false, 'high']`
 
 ### 3. Serverless SQL Compatibility
 
-Serverless SQL environments like Neon and Supabase feature HTTP connection pooling and instant cold starts. Heavy ORMs with large binary engines often degrade serverless function response times. `lightweight-ts-orm` is zero-dependency (other than `pg`), lightweight (< 15KB compressed), and uses standard stateless connection pools.
+Serverless SQL environments like Neon and Supabase are well suited to lightweight database access. Heavy ORMs with large runtime engines can add complexity and overhead. `lightweight-ts-orm` has a minimal runtime dependency footprint (primarily `pg`), is lightweight, and uses PostgreSQL connection pooling.
 
 ### 4. Automatic DDL Schema Synchronization
 

@@ -1,8 +1,14 @@
 # Lightweight TypeScript ORM Monorepo & Todo Application
 
-A type-safe, lightweight TypeScript ORM designed specifically for serverless Postgres SQL databases (such as Neon, Supabase, Railway, or standard Postgres instances). Published as a reusable npm package (`lightweight-ts-orm`) within an npm workspaces monorepo structure, paired with a full-stack Todo Application (React + Tailwind CSS frontend and Express.js backend).
+A type-safe, lightweight TypeScript ORM designed specifically for serverless Postgres SQL databases (such as Neon, Supabase, Railway, or standard Postgres instances). The ORM is developed within this monorepo and published as the reusable npm package [`lightweight-ts-orm`](https://www.npmjs.com/package/lightweight-ts-orm), paired with a full-stack Todo Application (React + Tailwind CSS frontend and Express.js backend).
 
 ---
+
+## 🌐 Live Demo
+
+**Todo Application:** [YOUR_DEPLOYED_TODO_URL](YOUR_DEPLOYED_TODO_URL)
+
+**Backend API:** [YOUR_DEPLOYED_API_URL](YOUR_DEPLOYED_API_URL)
 
 ## 🚀 Quick Start
 
@@ -234,3 +240,18 @@ Mapped Typed Objects Returned to Developer
 1. **Migrations**: Supports schema auto-synchronization (`sync()`), but full step-by-step schema migration versioning files are optional/unimplemented.
 2. **Complex Joins**: Relational queries (`include`) currently execute two-stage batched joins for maximum serverless query compatibility; deep multi-level recursive joins could be added in future iterations.
 3. **Database Dialects**: Focused strictly on PostgreSQL and serverless Postgres extensions (Neon, Supabase).
+
+## ⏱️ Time Spent
+
+Approximately **8-10 hours** were spent designing, implementing, testing, documenting, and deploying the ORM and Todo application.
+
+## 🤖 AI Tools Disclosure
+
+AI tools were used during development for:
+
+- Understanding TypeScript, ORM architecture, and database concepts
+- Debugging and troubleshooting implementation issues
+- Reviewing code structure and implementation decisions
+- Improving documentation and README organization
+
+The final implementation was reviewed and understood before submission.

@@ -5,12 +5,11 @@
   "type": "module",
   "description": "Monorepo containing lightweight TypeScript ORM library and full-stack example Todo app using ES Modules",
   "workspaces": [
-    "packages/*",
     "apps/todo-app/server",
     "apps/todo-app/client"
   ],
   "scripts": {
-    "build": "npm run build --workspace=packages/orm && npm run build --workspace=apps/todo-app/server && npm run build --workspace=apps/todo-app/client",
+    "build": "npm run build --workspace=apps/todo-app/server && npm run build --workspace=apps/todo-app/client",
     "dev:orm": "npm run dev --workspace=packages/orm",
     "dev:server": "npm run dev --workspace=apps/todo-app/server",
     "dev:client": "npm run dev --workspace=apps/todo-app/client",

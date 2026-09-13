@@ -1,0 +1,34 @@
+{
+  "name": "lightweight-typescript-orm-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Monorepo containing lightweight TypeScript ORM library and full-stack example Todo app",
+  "workspaces": [
+    "packages/*",
+    "apps/todo-app/server",
+    "apps/todo-app/client"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace=packages/orm && npm run build --workspace=apps/todo-app/server && npm run build --workspace=apps/todo-app/client",
+    "dev:orm": "npm run dev --workspace=packages/orm",
+    "dev:server": "npm run dev --workspace=apps/todo-app/server",
+    "dev:client": "npm run dev --workspace=apps/todo-app/client",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "start": "npm run start --workspace=apps/todo-app/server",
+    "sync-db": "npm run sync --workspace=packages/orm"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "typescript": "^5.3.3"
+  },
+  "keywords": [
+    "orm",
+    "typescript",
+    "postgres",
+    "serverless",
+    "monorepo",
+    "type-safe"
+  ],
+  "author": "",
+  "license": "MIT"
+}

@@ -6,11 +6,11 @@ A type-safe, lightweight TypeScript ORM designed specifically for serverless Pos
 
 ## 🌐 Live Demo
 
-**Todo Application:** (https://lightweight-typescript-orm-client.vercel.app/)
+**Todo Application:** ( https://lightweight-typescript-orm-client.vercel.app/ )
 
-**Backend API:** (https://lightweight-typescript-orm.onrender.com)
+**Backend API:** ( https://lightweight-typescript-orm.onrender.com )
 
-**ORM Package URL:** (https://www.npmjs.com/package/lightweight-ts-orm)
+**ORM Package URL:** ( https://www.npmjs.com/package/lightweight-ts-orm )
 
 ## 🚀 Quick Start
 

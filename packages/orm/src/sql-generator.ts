@@ -1,5 +1,5 @@
-import { ModelDefinition } from './schema';
-import { WhereClause, OrderByOptions, SelectQueryOptions, AnyColumnBuilder } from './types';
+import { ModelDefinition } from './schema.js';
+import { WhereClause, OrderByOptions, SelectQueryOptions, AnyColumnBuilder } from './types.js';
 
 export interface GeneratedQuery {
   text: string;

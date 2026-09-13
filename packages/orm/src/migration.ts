@@ -1,6 +1,6 @@
-import { ModelDefinition } from './schema';
-import { DatabaseDriver, AnyColumnBuilder } from './types';
-import { buildCreateTableSql, escapeIdentifier } from './sql-generator';
+import { ModelDefinition } from './schema.js';
+import { DatabaseDriver, AnyColumnBuilder } from './types.js';
+import { buildCreateTableSql, escapeIdentifier } from './sql-generator.js';
 
 export interface SyncOptions {
   force?: boolean;

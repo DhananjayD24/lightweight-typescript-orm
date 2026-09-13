@@ -2,25 +2,25 @@
   "name": "@todo-app/server",
   "version": "1.0.0",
   "private": true,
-  "description": "Express.js API server for Todo application using lightweight-ts-orm",
+  "type": "module",
+  "description": "Express.js API server for Todo application using lightweight-ts-orm with ES Modules",
   "main": "dist/server.js",
   "scripts": {
     "build": "tsc",
-    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "dev": "tsx watch src/server.ts",
     "start": "node dist/server.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.1",
     "express": "^4.18.2",
-    "lightweight-ts-orm": "^1.0.0"
+    "lightweight-ts-orm": "file:../../../packages/orm"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
     "@types/node": "^20.11.0",
-    "ts-node": "^10.9.2",
-    "ts-node-dev": "^2.0.0",
+    "tsx": "^4.7.1",
     "typescript": "^5.3.3"
   }
 }

@@ -1,6 +1,5 @@
-import { ModelDefinition } from './schema';
-
-import { AnyColumnBuilder } from './types';
+import { ModelDefinition } from './schema.js';
+import { AnyColumnBuilder } from './types.js';
 
 export class ValidationError extends Error {
   constructor(public errors: string[]) {

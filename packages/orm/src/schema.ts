@@ -1,5 +1,5 @@
-import { SchemaDefinition, ModelConfig, RelationDefinition, InferModel, InferInsert, InferUpdate } from './types';
-import { RelationBuilder } from './relations';
+import { SchemaDefinition, ModelConfig, RelationDefinition, InferModel, InferInsert, InferUpdate } from './types.js';
+import { RelationBuilder } from './relations.js';
 
 export interface DefineModelOptions {
   relations?: Record<string, RelationBuilder>;

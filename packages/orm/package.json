@@ -1,22 +1,29 @@
 {
   "name": "lightweight-ts-orm",
   "version": "1.0.0",
-  "description": "A lightweight, type-safe TypeScript ORM for serverless Postgres SQL databases",
+  "type": "module",
+  "description": "A lightweight, type-safe TypeScript ORM for serverless Postgres SQL databases using ES Modules",
   "main": "dist/index.js",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
-    "sync": "ts-node src/cli.ts sync"
+    "sync": "tsx src/cli.ts sync"
   },
   "keywords": [
     "orm",
     "typescript",
     "postgres",
     "serverless",
+    "esm",
+    "modular-js",
     "type-safe",
     "sql"
   ],
@@ -26,7 +33,7 @@
   "devDependencies": {
     "@types/node": "^20.11.0",
     "@types/pg": "^8.11.0",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.7.1",
     "typescript": "^5.3.3"
   },
   "license": "MIT"

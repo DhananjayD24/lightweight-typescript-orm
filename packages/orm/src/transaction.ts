@@ -1,4 +1,4 @@
-import { DatabaseDriver } from './types';
+import { DatabaseDriver } from './types.js';
 
 export async function executeTransaction<T>(
   driver: DatabaseDriver,

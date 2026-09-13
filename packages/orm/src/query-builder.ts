@@ -1,4 +1,4 @@
-import { ModelDefinition } from './schema';
+import { ModelDefinition } from './schema.js';
 import {
   DatabaseDriver,
   SelectQueryOptions,
@@ -7,14 +7,14 @@ import {
   InferModel,
   InferInsert,
   InferUpdate,
-} from './types';
-import { validateRecord } from './validation';
+} from './types.js';
+import { validateRecord } from './validation.js';
 import {
   buildSelectSql,
   buildInsertSql,
   buildUpdateSql,
   buildDeleteSql,
-} from './sql-generator';
+} from './sql-generator.js';
 
 export class QueryChainBuilder<TSchema extends any = any, TResult = any> {
   private options: SelectQueryOptions<TSchema> = {};

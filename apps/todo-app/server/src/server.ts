@@ -1,8 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import { router } from './routes';
-import { initDb } from './db';
+import { router } from './routes.js';
+import { initDb } from './db.js';
 
 dotenv.config();
 
@@ -20,7 +20,7 @@ async function startServer() {
   app.listen(PORT, () => {
     console.log(`==================================================`);
     console.log(`🚀 Todo Express Server running on http://localhost:${PORT}`);
-    console.log(`⚡ Powered by lightweight-ts-orm`);
+    console.log(`⚡ Powered by lightweight-ts-orm (ES Modules)`);
     console.log(`==================================================`);
   });
 }

@@ -1,4 +1,4 @@
-import { RelationDefinition } from './types';
+import { RelationDefinition } from './types.js';
 
 export interface RelationOptions {
   foreignKey?: string;

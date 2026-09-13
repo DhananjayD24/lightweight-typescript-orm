@@ -1,9 +1,11 @@
-import { Pool, PoolConfig } from 'pg';
-import { ModelDefinition } from './schema';
-import { DatabaseDriver, DbQueryResult } from './types';
-import { ModelDelegate } from './query-builder';
-import { syncDatabase, SyncOptions } from './migration';
-import { executeTransaction } from './transaction';
+import pg from 'pg';
+import { ModelDefinition } from './schema.js';
+import { DatabaseDriver, DbQueryResult } from './types.js';
+import { ModelDelegate } from './query-builder.js';
+import { syncDatabase, SyncOptions } from './migration.js';
+import { executeTransaction } from './transaction.js';
+
+const { Pool } = pg;
 
 export interface DatabaseConfig {
   connectionString?: string;
@@ -12,14 +14,14 @@ export interface DatabaseConfig {
 }
 
 export class PostgresDriver implements DatabaseDriver {
-  private pool: Pool | null = null;
+  private pool: pg.Pool | null = null;
   private memoryTables: Map<string, any[]> = new Map();
   private autoIncrementIds: Map<string, number> = new Map();
   public isFallbackMemory: boolean = false;
 
   constructor(private config?: DatabaseConfig) {
     if (config?.connectionString) {
-      const poolConfig: PoolConfig = {
+      const poolConfig: pg.PoolConfig = {
         connectionString: config.connectionString,
         ssl: config.ssl !== undefined ? config.ssl : { rejectUnauthorized: false },
       };
@@ -35,13 +37,11 @@ export class PostgresDriver implements DatabaseDriver {
         const res = await this.pool.query(sql, params);
         return { rows: res.rows, rowCount: res.rowCount || res.rows.length };
       } catch (err: any) {
-        // If live connection fails or table missing, log warning
         console.warn(`[ORM Postgres Query Error]: ${err.message}. Falling back to memory execution if needed.`);
         throw err;
       }
     }
 
-    // In-memory SQL simulator for seamless offline execution without live DB setup
     return this.executeInMemory<T>(sql, params);
   }
 
@@ -98,10 +98,7 @@ export class PostgresDriver implements DatabaseDriver {
         const tableName = match[1];
         let table = [...(this.memoryTables.get(tableName) || [])];
 
-        // Basic WHERE filtering simulation
         if (sql.includes('WHERE')) {
-          const whereParts = sql.split('WHERE')[1].split('ORDER BY')[0].split('LIMIT')[0];
-          // Filter matching params if any
           table = table.filter(row => {
             let matches = true;
             params.forEach(p => {
@@ -137,11 +134,9 @@ export class PostgresDriver implements DatabaseDriver {
         const table = this.memoryTables.get(tableName) || [];
         const updatedRows: any[] = [];
 
-        // Match param for update
         const idVal = params[params.length - 1];
         table.forEach(row => {
           if (row.id === idVal || params.includes(row.id)) {
-            // Apply set updates
             let paramIdx = 0;
             if (sql.includes('"completed"')) {
               row.completed = params[paramIdx++];

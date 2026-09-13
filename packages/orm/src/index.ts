@@ -1,12 +1,12 @@
-export { defineModel, ModelDefinition, DefineModelOptions } from './schema';
-export { number, string, boolean, date, json } from './fields';
-export { belongsTo, hasMany, hasOne, RelationBuilder, RelationOptions } from './relations';
-export { createDatabase, PostgresDriver, ORMClient, DatabaseConfig } from './client';
-export { syncDatabase, SyncOptions } from './migration';
-export { executeTransaction } from './transaction';
-export { ValidationError, validateRecord } from './validation';
-export { buildSelectSql, buildInsertSql, buildUpdateSql, buildDeleteSql, buildCreateTableSql } from './sql-generator';
-export { ModelDelegate, QueryChainBuilder } from './query-builder';
+export { defineModel, ModelDefinition, DefineModelOptions } from './schema.js';
+export { number, string, boolean, date, json } from './fields.js';
+export { belongsTo, hasMany, hasOne, RelationBuilder, RelationOptions } from './relations.js';
+export { createDatabase, PostgresDriver, ORMClient, DatabaseConfig } from './client.js';
+export { syncDatabase, SyncOptions } from './migration.js';
+export { executeTransaction } from './transaction.js';
+export { ValidationError, validateRecord } from './validation.js';
+export { buildSelectSql, buildInsertSql, buildUpdateSql, buildDeleteSql, buildCreateTableSql } from './sql-generator.js';
+export { ModelDelegate, QueryChainBuilder } from './query-builder.js';
 
 export type {
   DataType,
@@ -26,4 +26,4 @@ export type {
   ModelConfig,
   DbQueryResult,
   DatabaseDriver,
-} from './types';
+} from './types.js';

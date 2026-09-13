@@ -1,4 +1,4 @@
-import { ColumnBuilder } from './types';
+import { ColumnBuilder } from './types.js';
 
 export function number(): ColumnBuilder<number, false, false> {
   return new ColumnBuilder<number, false, false>('number');

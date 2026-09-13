@@ -228,14 +228,6 @@ Database Driver (Postgres Pool / Serverless Client / Memory Fallback)
 Mapped Typed Objects Returned to Developer
 ```
 
----
-
-## ⏱️ Time Spent & AI Tools Disclosure
-
-- **Estimated Time Spent**: ~6 hours (architecture design, generic type system, ORM core, Express REST API, React + Tailwind UI).
-- **AI Tools Used**: Gemini 3.6 Flash (High) via Antigravity Agent for scaffold building, generic type inference optimization, and full-stack monorepo assembly.
-
----
 
 ## ⚠️ Known Limitations & Future Improvements
 
